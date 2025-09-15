@@ -59,7 +59,6 @@ async def op(_, m :Message):
                         InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
                     ],[
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup")
-                        InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel")
                     ]
                 ]
             )
@@ -102,7 +101,6 @@ async def chk(_, cb : CallbackQuery):
                         InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
                     ],[
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup")
-                        InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel")
                     ]
                 ]
             )
