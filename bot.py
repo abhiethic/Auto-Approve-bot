@@ -58,7 +58,7 @@ async def op(_, m :Message):
                         InlineKeyboardButton("🗯 Channel", url="https://t.me/inter_bug"),
                         InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup")
+                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup"),
                         InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
                     ]
                 ]
@@ -101,7 +101,7 @@ async def chk(_, cb : CallbackQuery):
                         InlineKeyboardButton("🗯 Channel", url="https://t.me/inter_bug"),
                         InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup")
+                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup"),
                         InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
                     ]
                 ]
