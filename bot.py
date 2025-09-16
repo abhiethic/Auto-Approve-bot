@@ -63,7 +63,7 @@ async def op(_, m :Message):
                 ]
             )
             add_group(m.chat.id)
-            await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboard)
+            await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
         print(m.from_user.first_name +" Is started Your Bot!")
         
     except UserNotParticipant:
@@ -95,7 +95,7 @@ async def chk(_, cb : CallbackQuery):
                 ]
             )
             add_user(cb.from_user.id)
-            await cb.message.edit("**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
+            await cb.message.edit("**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(cb.from_user.mention), reply_markup=keyboard)
         print(cb.from_user.first_name +" Is started Your Bot!")
     except UserNotParticipant:
         await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")
