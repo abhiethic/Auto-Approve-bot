@@ -13,7 +13,7 @@ app = Client(
     bot_token=cfg.BOT_TOKEN
 )
 
-gif = ['https://telegra.ph/file/e49a2ea353601f51c2079-2a4cbf3cfb9ab01201.jpg']
+gif = ['https://telegra.ph/file/3daa05d88c7c540d58a34-5fda1078570d6eb916.jpg']
 
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Main process ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -52,7 +52,7 @@ async def op(_, m :Message):
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/e49a2ea353601f51c2079-2a4cbf3cfb9ab01201.jpg", caption="**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
+            await m.reply_photo("https://telegra.ph/file/3daa05d88c7c540d58a34-5fda1078570d6eb916.jpg", caption="**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
