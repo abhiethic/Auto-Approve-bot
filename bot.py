@@ -13,7 +13,7 @@ app = Client(
     bot_token=cfg.BOT_TOKEN
 )
 
-gif = ['https://telegra.ph/file/3daa05d88c7c540d58a34-5fda1078570d6eb916.jpg']
+gif = ['https://telegra.ph/file/907671f537f2925e30755-041a2bd1a617b0ac68.gif']
 
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Main process ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
