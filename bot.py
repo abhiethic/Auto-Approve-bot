@@ -38,7 +38,7 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         img = random.choice(gif)
-        await app.send_video(kk.id,img, "**Hello {}!\nWelcome To {}\n\n__Powerd By : @inter_bug__**".format(m.from_user.mention, m.chat.title))
+        await app.send_video(kk.id,img, "**Hello {}!\nWelcome To {}\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention, m.chat.title))
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
         print("user isn't start bot(means group)")
@@ -55,16 +55,16 @@ async def op(_, m :Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/inter_bug"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
+                        InlineKeyboardButton("📢 Updates", url="https://t.me/AcceptronBotUpdates"),
+                        InlineKeyboardButton("📩 Support", url="https://t.me/AcceptronBotUpdates")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup"),
-                        InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
+                        InlineKeyboardButton("💬 Add to Group", url="https://t.me/AcceptronBot?startgroup=true&admin=invite_users+promote_members+delete_messages"),
+                        InlineKeyboardButton("♂️ Add to Channel", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
                     ]
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @inter_bug__**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+            await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
@@ -98,16 +98,16 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/inter_bug"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/inter_bug")
+                        InlineKeyboardButton("📢 Updates", url="https://t.me/inter_bug"),
+                        InlineKeyboardButton("📩 Support", url="https://t.me/inter_bug")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/AcceptronBot?startgroup"),
-                        InlineKeyboardButton("➕ Add me to your Channel ➕", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
+                        InlineKeyboardButton("💬 Add to Group", url="https://t.me/AcceptronBot?startgroup=true&admin=invite_users+promote_members+delete_messages"),
+                        InlineKeyboardButton("♂️ Add to Channel", url="https://t.me/AcceptronBot?startchannel=true&admin=post_messages+delete_messages+edit_messages+invite_users+promote_members")
                     ]
                 ]
             )
             add_user(cb.from_user.id)
-            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @inter_bug__**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
+            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @AcceptronBotUpdates__**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
         print(cb.from_user.first_name +" Is started Your Bot!")
     except UserNotParticipant:
         await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")
