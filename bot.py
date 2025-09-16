@@ -52,7 +52,7 @@ async def op(_, m :Message):
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/e49a2ea353601f51c2079-2a4cbf3cfb9ab01201.jpg", caption="**🦊 Hello {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
+            await m.reply_photo("https://telegra.ph/file/e49a2ea353601f51c2079-2a4cbf3cfb9ab01201.jpg", caption="**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
@@ -63,7 +63,7 @@ async def op(_, m :Message):
                 ]
             )
             add_group(m.chat.id)
-            await m.reply_text("**🦊 Hello {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
+            await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboard)
         print(m.from_user.first_name +" Is started Your Bot!")
 
     except UserNotParticipant:
@@ -74,7 +74,7 @@ async def op(_, m :Message):
                 ]
             ]
         )
-        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
+        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=keyboard)
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -95,7 +95,7 @@ async def chk(_, cb : CallbackQuery):
                 ]
             )
             add_user(cb.from_user.id)
-            await cb.message.edit("**🦊 Hello {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
+            await cb.message.edit("**👋 Hey {}!\nApprove join requests instantly in your Groups & Channels. Just add & promote me!\n\n__Powerd By : @AcceptronBotUpdates__**".format(m.from_user.mention), reply_markup=keyboard)
         print(cb.from_user.first_name +" Is started Your Bot!")
     except UserNotParticipant:
         await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")
