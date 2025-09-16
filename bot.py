@@ -66,15 +66,42 @@ async def op(_, m :Message):
             await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboard)
         print(m.from_user.first_name +" Is started Your Bot!")
 
+   from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant
+
+# Your channel/username to check
+FSUB = "YourChannelUsername"  # replace with cfg.FSUB if using a config file
+
+@Client.on_message(filters.private & filters.command("start"))
+async def start(client, m):
+    try:
+        # Check if user is a member
+        member = await client.get_chat_member(FSUB, m.from_user.id)
+        await m.reply_text("✅ You have access!")
     except UserNotParticipant:
+        # User not a member, show button
         key = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🍀 Check Again 🍀", "chk")
+                    InlineKeyboardButton("🍀 Check Again 🍀", callback_data="chk")
                 ]
             ]
         )
-        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
+        await m.reply_text(
+            f"⚠️ Access Denied! ⚠️\n\nPlease join @{FSUB} to use me.\nIf you joined, click 'Check Again' to confirm.",
+            reply_markup=key
+        )
+
+# Handle callback when user clicks "Check Again"
+@Client.on_callback_query()
+async def check_again(client, callback_query):
+    if callback_query.data == "chk":
+        try:
+            member = await client.get_chat_member(FSUB, callback_query.from_user.id)
+            await callback_query.message.edit_text("✅ Access Granted! Welcome!")
+        except UserNotParticipant:
+            await callback_query.answer("❌ You are still not joined!", show_alert=True)
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
