@@ -66,7 +66,7 @@ async def op(_, m :Message):
             await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboard)
         print(m.from_user.first_name +" Is started Your Bot!")
         
-except UserNotParticipant:
+    except UserNotParticipant:
         key = InlineKeyboardMarkup(
             [
                 [
@@ -75,7 +75,7 @@ except UserNotParticipant:
             ]
         )
         await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
-
+          
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 @app.on_callback_query(filters.regex("chk"))
