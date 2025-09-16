@@ -66,14 +66,21 @@ async def op(_, m :Message):
             await m.reply_text("**👋 Hey {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboard)
         print(m.from_user.first_name +" Is started Your Bot!")
 
-   from pyrogram import Client, filters
+  from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 
-# Your channel/username to check
-FSUB = "YourChannelUsername"  # replace with cfg.FSUB if using a config file
+# Your channel username
+FSUB = "@AcceptronBotUpdates"  # replace with your actual channel
 
-@Client.on_message(filters.private & filters.command("start"))
+# Initialize the bot
+app = Client(
+    "my_bot",                 # session name
+    bot_token="YOUR_BOT_TOKEN"  # replace with your bot token
+)
+
+# Start command
+@app.on_message(filters.private & filters.command("start"))
 async def start(client, m):
     try:
         # Check if user is a member
@@ -93,8 +100,8 @@ async def start(client, m):
             reply_markup=key
         )
 
-# Handle callback when user clicks "Check Again"
-@Client.on_callback_query()
+# Callback for "Check Again"
+@app.on_callback_query()
 async def check_again(client, callback_query):
     if callback_query.data == "chk":
         try:
